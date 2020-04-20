@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json()); //to get axios JSON--inside req.body
+app.use(bodyParser.urlencoded({extended: true}));//to get form data from form submit 
+app.use(bodyParser.json()); //to get axios/fetch JSON data--inside req.body
 
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+"/index.html")
